@@ -25,7 +25,6 @@
     </style>
 </head>
 <body>
-
     <h2>Weather App</h2>
     
     
@@ -36,12 +35,13 @@
         <input type="text" id="country" placeholder="Enter country code">
 
         <!-- Button that calls getWeather() function when clicked -->
-        <button type="button" onclick="getWeather()">Get Weather</button>  
+        <button type="button" onclick="getWeather()">Get Weather</button>
     </form>
 
     <!-- Div where the weather information will be displayed -->
     <div id="weather"></div>
-
+    
+    
     <script>
         // Async function to fetch weather data
         async function getWeather() {
@@ -50,7 +50,10 @@
             const state = document.getElementById('state').value;
             const country = document.getElementById('country').value;
             
-            console.log(`test ${city}`);            
+            // console.log(config.API_KEY);
+            console.log(`test ${city}`);
+
+            var apiKey = config.API_KEY;
 
             // Construct the API URL with city, state, country, API key, and units in Celsius
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${apiKey}&units=metric`;
@@ -117,8 +120,6 @@
 
         }
     </script>
-    <script type='text/javascript' src='config.js'>
-        const apiKey = config.API_KEY;
-    </script>
+    <script type='text/javascript' src='config.js'></script>
 </body>
 </html>
