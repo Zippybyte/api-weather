@@ -103,10 +103,12 @@
 
                 console.log(JSON.stringify(data2, null, 2));
 
+                const fahrenheit = ((5/9) * data.main.temp) + 32;
+
                 // Update the weather div with retrieved data
                 document.getElementById('weather').innerHTML = `
                     <h3>${data.name}, ${data2[0].state}, ${data.sys.country}</h3> <!-- City name and country -->
-                    <p>Temperature: ${data.main.temp}°C</p> <!-- Temperature -->
+                    <p>Temperature: ${data.main.temp}°C ${fahrenheit.toFixed(1)}°F</p> <!-- Temperature -->
                     <p>Weather: ${data.weather[0].description}</p> <!-- Weather condition -->
                     <p>Humidity: ${data.main.humidity}%</p> <!-- Humidity percentage -->
                     <p>Wind Speed: ${data.wind.speed} m/s</p> <!-- Wind speed -->
